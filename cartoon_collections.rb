@@ -16,14 +16,11 @@ def long_planeteer_calls(planeteer_calls)
   end
 end
 
+
 def find_valid_calls(planeteer_calls)
   valid_calls = ["Earth!", "Wind!", "Fire!", "Water!", "Heart!"]
   count = 0
-  planeteer_calls.map do |word|
-    if valid_calls[count] == word
-      return word
-    end
-    count += 1
+  planeteer_calls.find do |word|
+    valid_calls.include? word
   end
-  nil
 end
